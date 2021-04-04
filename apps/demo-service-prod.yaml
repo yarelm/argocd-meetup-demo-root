@@ -11,6 +11,6 @@ spec:
     name: in-cluster
   project: demo-project-prod
   source:
-    path: overlays/prod
+    path: demo-service/overlays/prod
     repoURL: https://github.com/yarelm/argocd-meetup-demo
     targetRevision: HEAD
