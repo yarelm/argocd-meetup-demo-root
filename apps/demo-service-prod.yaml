@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: demo-service-prod
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: prod
+    name: in-cluster
+  project: demo-project-prod
+  source:
+    path: overlays/prod
+    repoURL: https://github.com/yarelm/argocd-meetup-demo
+    targetRevision: HEAD
